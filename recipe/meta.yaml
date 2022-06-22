@@ -1,5 +1,5 @@
 {% set name = "napari-error-reporter" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari_error_reporter-{{ version }}.tar.gz
-  sha256: d5d201471aa9928fee99d25272e8a75f3ee37a73b0c2e08ff4759b6497d68cb1
+  sha256: 7c499f526570762630daa1c87d863ecc5265621765c5b6e3f0bdbc271e774d53
 
 build:
   noarch: python
