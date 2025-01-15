@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari_error_reporter-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari_error_reporter-{{ version }}.tar.gz
   sha256: 7c499f526570762630daa1c87d863ecc5265621765c5b6e3f0bdbc271e774d53
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - appdirs
-    - python >=3.8
+    - python >={{ python_min }}
     - qtpy
     - sentry-sdk
 
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/tlambert03/napari-error-reporter
